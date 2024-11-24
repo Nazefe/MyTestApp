@@ -1,0 +1,9 @@
+﻿<Window x:Class="MyTestApp.ResultWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Результаты игры" Height="400" Width="300">
+    <Grid>
+        <TextBlock x:Name="ResultsTextBlock" FontSize="16" Margin="10,10,10,48" TextWrapping="Wrap" />
+        <Button x:Name="RestartButton" Content="Начать заново" Width="150" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,341,0,0" Click="RestartButton_Click" />
+    </Grid>
+</Window>

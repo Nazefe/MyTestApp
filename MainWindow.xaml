@@ -1,0 +1,53 @@
+﻿<Window x:Class="MyTestApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="MainWindow" Height="600" Width="1000">
+    <Grid ShowGridLines="False">
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\nazar\source\repos\MyTestApp\FonPicture1.jpg" />
+        </Grid.Background>
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/> <!-- Для уведомления об ошибке -->
+            <RowDefinition Height="*"/>    <!-- Для текста загадки -->
+            <RowDefinition Height="Auto"/>  <!-- Для ввода ответа -->
+            <RowDefinition Height="Auto"/>  <!-- Для кнопки проверки ответа -->
+            <RowDefinition Height="Auto"/>  <!-- Для результатов игры -->
+            <RowDefinition Height="Auto"/>  <!-- Для кнопки перезапуска -->
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Уведомление о результате -->
+        <Border x:Name="ResultBorder" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="#80000000" CornerRadius="10" Visibility="Collapsed" Margin="10">
+            <TextBlock x:Name="ResultTextBlock" FontSize="18" HorizontalAlignment="Center" Foreground="Red" Margin="10" />
+        </Border>
+
+        <!-- Полупрозрачный фон для текста загадки -->
+        <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" Background="#80000000" CornerRadius="10" Padding="20" Margin="150,225,149,21">
+            <TextBlock x:Name="RiddleText" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" TextWrapping="Wrap" Width="600" />
+        </Border>
+
+        <!-- Поле для ввода ответа -->
+        <TextBox x:Name="AnswerTextBox" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" 
+                 Width="300" HorizontalAlignment="Left" Margin="34,8,0,26" />
+
+        <!-- Кнопка для проверки ответа -->
+        <Button x:Name="CheckAnswerButton" Grid.Row="3" Grid.Column="1" 
+                Content="Проверить ответ" Width="150" HorizontalAlignment="Center" 
+                Click="CheckAnswerButton_Click" Margin="0,10,0,10" />
+
+        <!-- Результаты игры -->
+        <TextBlock x:Name="GameResultsTextBlock" Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="3" 
+                   FontSize="18" HorizontalAlignment="Center" Foreground="Black" Visibility="Collapsed" />
+
+        <!-- Кнопка для перезапуска игры -->
+        <Button x:Name="RestartButton" Grid.Row="5" Grid.Column="1" Grid.ColumnSpan="1" 
+                Content="Начать заново" Width="150" HorizontalAlignment="Center" 
+                Click="RestartButton_Click" Visibility="Collapsed" />
+    </Grid>
+</Window>
